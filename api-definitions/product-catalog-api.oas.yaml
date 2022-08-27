@@ -242,7 +242,7 @@ components:
     Product:
       title: Product
       required:
-        - productId
+        # - productId
         - name
         - price
       type: object

@@ -17,7 +17,7 @@ servers:
       port:
         default: '8000'
 paths:
-  /catalog/categories:
+  /v1/catalog/categories:
     get:
       tags:
         - Categories

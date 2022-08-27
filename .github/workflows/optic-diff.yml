@@ -17,8 +17,6 @@ jobs:
         run: npm install -g @useoptic/optic      
       - name: Checkout out pr branch
         uses: actions/checkout@v3
-        with:
-          path: revision
       - name: View working folder
         run: |
           ls -lash

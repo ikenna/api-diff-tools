@@ -1,0 +1,8 @@
+.env
+output/
+output/tests.postman.json
+tmp
+scratch
+test-reports
+*.log
+.hypothesis

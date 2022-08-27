@@ -1,0 +1,5 @@
+files:
+  - path: api-definitions/product-catalog-api.oas.yaml
+    id: Product-Catalog-API
+ruleset:
+  - breaking-changes

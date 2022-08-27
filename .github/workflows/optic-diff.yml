@@ -1,0 +1,32 @@
+name: OpenAPI diff with opticdev/optic
+
+on: 
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  checks: write
+
+jobs:
+  optic-diff:
+    name: Breaking Change Check with opticdev/optic
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install optic
+        run: npm install -g @useoptic/optic      
+      - name: Checkout out pr branch
+        uses: actions/checkout@v3
+        with:
+          path: revision
+      - name: View working folder
+        run: |
+          ls -lash
+          tree
+      - name: Run diff
+        run: optic diff api-definitions/product-catalog-api.oas.yaml --base main 
+      - name: Run diff with breaking change checks
+        run: optic diff api-definitions/product-catalog-api.oas.yaml --base main --check
+
+
+      
